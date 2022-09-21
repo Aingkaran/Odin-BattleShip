@@ -2,7 +2,7 @@ const ship =(size)=>{
 
     let container= ()=>{
         let shipsize= []
-        let addSize=""
+        let addSize="O"
         for (let i=0;i<size;i++){
             shipsize.push(addSize)
         }
@@ -25,11 +25,9 @@ const ship =(size)=>{
         }
         if (count==length){
             return true 
-            console.log(true)
         }
         else {
             return false
-            console.log(false)
         }
     }
 
