@@ -1,10 +1,10 @@
-const ship =(size)=>{
+const ship =(size,type)=>{
+    let shiptype = String(type)
 
     let container= ()=>{
         let shipsize= []
-        let addSize="O"
         for (let i=0;i<size;i++){
-            shipsize.push(addSize)
+            shipsize.push(type)
         }
         return shipsize
     }
@@ -31,7 +31,7 @@ const ship =(size)=>{
         }
     }
 
-return {container, length, hit, isSunk, shipContainer}
+return {container, length, hit, isSunk, shipContainer,shiptype}
 
 }
 
