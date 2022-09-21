@@ -20,5 +20,5 @@ playerGameboard.placeShip(smallShip1)
 playerGameboard.placeShip(smallShip2)
 
 console.log(playerGameboard.box)
-playerGameboard.receiveAttack(43)
-console.log(playerGameboard.box)
+
+console.log(playerGameboard.shipArray[0].shipContainer)

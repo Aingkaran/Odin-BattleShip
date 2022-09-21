@@ -3,8 +3,9 @@ const ship =(size,type)=>{
 
     let container= ()=>{
         let shipsize= []
+
         for (let i=0;i<size;i++){
-            shipsize.push(type)
+            shipsize.push({"shiptype": type, "position": i})
         }
         return shipsize
     }

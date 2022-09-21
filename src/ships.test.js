@@ -13,7 +13,19 @@ test('Returns the correct ship size ', () => {
 test('Returns the correct container for the ship', () => {
   const newship= ship(4,"M");
 
-  expect(newship.shipContainer).toEqual([newship.shiptype,newship.shiptype,newship.shiptype,newship.shiptype])
+  expect(newship.shipContainer).toEqual([{
+         "position": 0,
+         "shiptype": "M",
+       },{
+           "position": 1,
+          "shiptype": "M",
+         },{
+            "position": 2,
+             "shiptype": "M",
+           },{
+               "position": 3,
+               "shiptype": "M",
+             }])
 });
 
 
@@ -25,7 +37,10 @@ test('Returns the correct container for the ship after getting hit', () => {
   newship.hit(1)
   newship.hit(3)
 
-  expect(newship.shipContainer).toEqual(["hit","hit",newship.shiptype,"hit"])
+  expect(newship.shipContainer).toEqual(["hit","hit",
+                                        {"position": 2,
+                                        "shiptype": "M"},
+                                        "hit"])
 });
 
 
