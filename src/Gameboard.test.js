@@ -71,3 +71,55 @@ test('Return Gamboard size to be 100 ', () => {
     expect(playerGameboard.box[1]).toEqual("hit")
   });
 
+
+
+  test('Check if fleetDestroyed funciton returns false when all ships are not destroyed', () => {
+ 
+    const smallShip2= ship(2,"S2")
+    const mediumShip=ship(3,"M")
+    const mediumShip2=ship(3,"M2")
+
+    const playerGameboard= Gameboard()
+    playerGameboard.placeShip(smallShip2)
+    playerGameboard.placeShip(mediumShip)
+    playerGameboard.placeShip(mediumShip2)
+
+    playerGameboard.shipArray[0].hit(0)
+    playerGameboard.shipArray[0].hit(1)
+
+    playerGameboard.shipArray[1].hit(0)
+    playerGameboard.shipArray[1].hit(1)
+    playerGameboard.shipArray[1].hit(2)
+
+    playerGameboard.shipArray[2].hit(0)
+    playerGameboard.shipArray[2].hit(1)
+
+
+    expect(playerGameboard.fleetDestroyed()).toEqual(false)
+  });
+
+
+  test('Check if fleetDestroyed funciton returns treu when all ships are destroyed', () => {
+ 
+    const smallShip2= ship(2,"S2")
+    const mediumShip=ship(3,"M")
+    const mediumShip2=ship(3,"M2")
+
+    const playerGameboard= Gameboard()
+    playerGameboard.placeShip(smallShip2)
+    playerGameboard.placeShip(mediumShip)
+    playerGameboard.placeShip(mediumShip2)
+
+    playerGameboard.shipArray[0].hit(0)
+    playerGameboard.shipArray[0].hit(1)
+
+    playerGameboard.shipArray[1].hit(0)
+    playerGameboard.shipArray[1].hit(1)
+    playerGameboard.shipArray[1].hit(2)
+
+    playerGameboard.shipArray[2].hit(0)
+    playerGameboard.shipArray[2].hit(1)
+    playerGameboard.shipArray[2].hit(2)
+
+    expect(playerGameboard.fleetDestroyed()).toEqual(true)
+  });

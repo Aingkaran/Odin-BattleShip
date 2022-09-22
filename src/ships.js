@@ -20,7 +20,7 @@ const ship =(size,type)=>{
     const isSunk=()=>{
         let count=0
         for (let i=0;i<length;i++){
-            if (shipContainer[i]=="hit"){
+            if (shipContainer[i]==="hit"){
                 count=count+1
             }
         }

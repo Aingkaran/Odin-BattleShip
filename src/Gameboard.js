@@ -43,15 +43,30 @@ const Gameboard =()=>{
         }
 
         else {
-            box[attackPosition] ="hit"
+            box[attackPosition] ="missed"
 
         }
 
     }
 
+    const fleetDestroyed=()=>{
+        let shipsDestroyed =0
+        for (let i=0;i<shipArray.length;i++){
+            if (shipArray[i].isSunk()==true){
+                shipsDestroyed= shipsDestroyed+1
+            }
+        }
+        if (shipsDestroyed==shipArray.length){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+
     
 
-return {box, placeShip,receiveAttack, shipArray}
+return {box, placeShip,receiveAttack, shipArray, fleetDestroyed}
 
 }
 
