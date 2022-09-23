@@ -11,7 +11,7 @@ const Player =(name)=>{
 
         if (PlayerName=="AI"){
             let attackCoord = Math.floor(Math.random() * 100);
-            if (victim.box[attackCoord]=="hit"){
+            if (victim.box[attackCoord]=="hit"||victim.box[attackCoord]=="missed"){
                 attackEnemy(victim)
             }
             else {
