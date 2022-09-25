@@ -1,3 +1,94 @@
-.test{
-    color: red;
+.container{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+
+.GameDisplay{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+
+.PlayerBoard{
+    background-color: grey;
+    width: 450px;
+    height: 450px;
+    display:flex;
+    flex-wrap: wrap;
+
+}
+
+.ComputerBoard{
+    background-color: grey;
+    width: 450px;
+    height: 450px;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.PlayerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ComputerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PlayerText{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.ComputerText{
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.NewGame{
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.boxes{
+    width: 41px;
+    height: 41px;
+   
+    border: 2px solid black;
+    
+}
+
+.boxes:hover{
+    background-color: red;
 }
