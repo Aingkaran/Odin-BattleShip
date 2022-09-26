@@ -19,12 +19,23 @@ const Gameboard =()=>{
                 ,"","","","","","","","","",""]
 
     const placeShip= (ship)=>{
-        shipArray.push(ship)
         let arrayPosition = Math.floor(Math.random() * 100);
+        let randomOrientation= Math.floor(Math.random() * 2);
         for (let i=0;i<ship.length;i++){
-            box[arrayPosition]= ship.shipContainer[i]
-            arrayPosition=arrayPosition+1
+            if (box[arrayPosition]==""&&randomOrientation==0){
+                box[arrayPosition]= ship.shipContainer[i]
+                arrayPosition=arrayPosition+1
+            }
+
+            
+
+            else {
+                placeShip(ship)
+            }
+            
         }
+        shipArray.push(ship)
+
     }
 
     const receiveAttack =(attackPosition)=>{

@@ -31,5 +31,11 @@ Computer.PlayerBoard.placeShip(mediumShip)
 Computer.PlayerBoard.placeShip(mediumShip2)
 Computer.PlayerBoard.placeShip(largeShip)
 
+console.log(PlayerOne.PlayerBoard.box)
+console.log(Computer.PlayerBoard.box)
+console.log(Computer.PlayerBoard.shipArray)
+console.log(PlayerOne.PlayerBoard.shipArray)
+
+
 placeDOMShips(PlayerOne)
 placeDOMShips(Computer)
