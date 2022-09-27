@@ -12,7 +12,8 @@ test('Return Gamboard size to be 100 ', () => {
  
     const smallShip2= ship(2,"S2")
     const playerGameboard= Gameboard()
-    playerGameboard.placeShip(smallShip2)
+    playerGameboard.pushShip(smallShip2)
+    playerGameboard.placeShip()
     let count = playerGameboard.box.filter(x => x.shiptype == smallShip2.shiptype).length;
 
     expect(count).toEqual(2)
@@ -23,9 +24,13 @@ test('Return Gamboard size to be 100 ', () => {
  
     const smallShip2= ship(2,"S2")
     const playerGameboard= Gameboard()
-    playerGameboard.placeShip(smallShip2)
+    playerGameboard.pushShip(smallShip2)
+
     const mediumShip=ship(3,"M")
-    playerGameboard.placeShip(mediumShip)
+    playerGameboard.pushShip(mediumShip)
+    playerGameboard.placeShip()
+
+    console.log(playerGameboard.box)
 
     let count = playerGameboard.box.filter(x => x.shiptype == smallShip2.shiptype).length;
     let count2 = playerGameboard.box.filter(x => x.shiptype == mediumShip.shiptype).length;
@@ -39,7 +44,9 @@ test('Return Gamboard size to be 100 ', () => {
  
     const smallShip2= ship(2,"S2")
     const playerGameboard= Gameboard()
-    playerGameboard.placeShip(smallShip2)
+    playerGameboard.pushShip(smallShip2)
+    playerGameboard.placeShip()
+
 
     playerGameboard.box[1] = smallShip2.shipContainer[0]
     playerGameboard.box[2] = smallShip2.shipContainer[1]
@@ -58,7 +65,9 @@ test('Return Gamboard size to be 100 ', () => {
  
     const smallShip2= ship(2,"S2")
     const playerGameboard= Gameboard()
-    playerGameboard.placeShip(smallShip2)
+    playerGameboard.pushShip(smallShip2)
+    playerGameboard.placeShip()
+
 
     playerGameboard.box[1] = smallShip2.shipContainer[0]
     playerGameboard.box[2] = smallShip2.shipContainer[1]
@@ -80,9 +89,12 @@ test('Return Gamboard size to be 100 ', () => {
     const mediumShip2=ship(3,"M2")
 
     const playerGameboard= Gameboard()
-    playerGameboard.placeShip(smallShip2)
-    playerGameboard.placeShip(mediumShip)
-    playerGameboard.placeShip(mediumShip2)
+    playerGameboard.pushShip(smallShip2)
+    playerGameboard.pushShip(mediumShip)
+    playerGameboard.pushShip(mediumShip2)
+
+    playerGameboard.placeShip()
+
 
     playerGameboard.shipArray[0].hit(0)
     playerGameboard.shipArray[0].hit(1)
@@ -106,9 +118,12 @@ test('Return Gamboard size to be 100 ', () => {
     const mediumShip2=ship(3,"M2")
 
     const playerGameboard= Gameboard()
-    playerGameboard.placeShip(smallShip2)
-    playerGameboard.placeShip(mediumShip)
-    playerGameboard.placeShip(mediumShip2)
+    playerGameboard.pushShip(smallShip2)
+    playerGameboard.pushShip(mediumShip)
+    playerGameboard.pushShip(mediumShip2)
+
+    playerGameboard.placeShip()
+
 
     playerGameboard.shipArray[0].hit(0)
     playerGameboard.shipArray[0].hit(1)

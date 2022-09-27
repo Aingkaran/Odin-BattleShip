@@ -48,7 +48,6 @@ test('Check if attackEnemy works from the player side ', () => {
     for(let i=0;i<99;i++){
         AingkaranGame.PlayerBoard.box[i]= "missed"
     }
-    console.log(AingkaranGame.PlayerBoard.box)
 
     ComputerGame.attackEnemy(AingkaranGame.PlayerBoard)
 

@@ -20,16 +20,22 @@ const mediumShip=ship(3,"M")
 const mediumShip2=ship(3,"M2")
 const largeShip =ship(4,"L")
 
-PlayerOne.PlayerBoard.placeShip(smallShip2)
-PlayerOne.PlayerBoard.placeShip(mediumShip)
-PlayerOne.PlayerBoard.placeShip(mediumShip2)
-PlayerOne.PlayerBoard.placeShip(largeShip)
+PlayerOne.PlayerBoard.pushShip(smallShip2)
+PlayerOne.PlayerBoard.pushShip(mediumShip)
+PlayerOne.PlayerBoard.pushShip(mediumShip2)
+PlayerOne.PlayerBoard.pushShip(largeShip)
 
 
-Computer.PlayerBoard.placeShip(smallShip2)
-Computer.PlayerBoard.placeShip(mediumShip)
-Computer.PlayerBoard.placeShip(mediumShip2)
-Computer.PlayerBoard.placeShip(largeShip)
+Computer.PlayerBoard.pushShip(smallShip2)
+Computer.PlayerBoard.pushShip(mediumShip)
+Computer.PlayerBoard.pushShip(mediumShip2)
+Computer.PlayerBoard.pushShip(largeShip)
+
+PlayerOne.PlayerBoard.placeShip()
+Computer.PlayerBoard.placeShip()
+
+
+
 
 console.log(PlayerOne.PlayerBoard.box)
 console.log(Computer.PlayerBoard.box)

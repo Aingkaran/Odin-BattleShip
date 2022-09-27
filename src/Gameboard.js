@@ -18,25 +18,34 @@ const Gameboard =()=>{
                 ,"","","","","","","","","",""
                 ,"","","","","","","","","",""]
 
-    const placeShip= (ship)=>{
-        let arrayPosition = Math.floor(Math.random() * 100);
-        let randomOrientation= Math.floor(Math.random() * 2);
-        for (let i=0;i<ship.length;i++){
-            if (box[arrayPosition]==""&&randomOrientation==0){
-                box[arrayPosition]= ship.shipContainer[i]
-                arrayPosition=arrayPosition+1
-            }
 
-            
-
-            else {
-                placeShip(ship)
-            }
-            
-        }
+    const pushShip = (ship)=>{
         shipArray.push(ship)
 
     }
+
+    const placeShip= ()=>{
+        
+        for (let i=0;i<shipArray.length;i++){
+            let arrayPosition = Math.floor(Math.random() * 100);
+            let randomOrientation= Math.floor(Math.random() * 2);
+            if (box[arrayPosition]==""){
+                    for (let j=0; j<shipArray[i].length; j++){
+                        box[arrayPosition]= shipArray[i].shipContainer[j]
+                        arrayPosition=arrayPosition+1
+
+                    }
+            
+            }
+                
+        }
+
+          
+    }
+
+       
+
+    
 
     const receiveAttack =(attackPosition)=>{
         if(box[attackPosition]!= "") {
@@ -77,7 +86,7 @@ const Gameboard =()=>{
 
     
 
-return {box, placeShip,receiveAttack, shipArray, fleetDestroyed}
+return {box, placeShip,receiveAttack, shipArray, fleetDestroyed, pushShip}
 
 }
 
