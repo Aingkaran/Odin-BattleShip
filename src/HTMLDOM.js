@@ -25,7 +25,7 @@ const placeDOMShips=(Player)=>{
 
         if (Player.PlayerBoard.box[i]!=""){
             const shipBox = document.getElementById(String(Player.PlayerName) + String(i))
-            shipBox.setAttribute("id","ship")
+            shipBox.setAttribute("type","ship")
         }
 
     }
@@ -33,7 +33,23 @@ const placeDOMShips=(Player)=>{
 }
 
 
+const DOMattack=(victim)=>{
+    const boxElement = document.querySelector(".boxes")
+
+    boxElement.addEventListener('click', ()=>{
 
 
 
-export {createGrid, placeDOMShips}
+
+    })
+
+
+
+
+}
+
+
+
+
+
+export {createGrid, placeDOMShips, DOMattack}

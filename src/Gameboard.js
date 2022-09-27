@@ -35,8 +35,10 @@ const Gameboard =()=>{
                         arrayPosition=arrayPosition+1
 
                     }
-            
+
             }
+
+           
                 
         }
 
