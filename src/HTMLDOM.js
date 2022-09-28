@@ -10,6 +10,8 @@ const createGrid=(DOMelement, Playerboard)=>{
         const oneGrid= document.createElement('div')
         oneGrid.setAttribute("class","boxes")
         oneGrid.setAttribute("id",String(Playerboard.PlayerName) +String(i))
+        oneGrid.setAttribute("data-position",i)
+
 
 
         grid.appendChild(oneGrid)
@@ -25,7 +27,8 @@ const placeDOMShips=(Player)=>{
 
         if (Player.PlayerBoard.box[i]!=""){
             const shipBox = document.getElementById(String(Player.PlayerName) + String(i))
-            shipBox.setAttribute("type","ship")
+            shipBox.setAttribute("type",Player.PlayerBoard.box[i].shiptype)
+            shipBox.setAttribute("id","ship")
         }
 
     }
@@ -34,18 +37,15 @@ const placeDOMShips=(Player)=>{
 
 
 const DOMattack=(victim)=>{
-    const boxElement = document.querySelector(".boxes")
-
-    boxElement.addEventListener('click', ()=>{
-
-
-
-
+    const boxPlayer = document.querySelectorAll(".boxes")
+    
+    
+    boxPlayer.forEach((box)=>{
+        box.addEventListener('click', (e)=>{
+            victim.PlayerBoard.receiveAttack(e.target.dataset.position)
+            console.log(victim.PlayerBoard.box)
+        })
     })
-
-
-
-
 }
 
 

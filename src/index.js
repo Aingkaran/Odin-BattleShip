@@ -45,3 +45,5 @@ console.log(PlayerOne.PlayerBoard.shipArray)
 
 placeDOMShips(PlayerOne)
 placeDOMShips(Computer)
+
+DOMattack(Computer)

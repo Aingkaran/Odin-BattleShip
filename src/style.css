@@ -87,14 +87,19 @@
    
     border: 2px solid black;
     
+    
 }
 
-
-
-div[type^="ship"] {
+#ship{
  background-color: green;
 }
 
 .boxes:hover{
     background-color: red;
 }
+
+
+#ship:hover{
+    background-color: red;
+   }
+
