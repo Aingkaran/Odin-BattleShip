@@ -36,14 +36,14 @@ const placeDOMShips=(Player)=>{
 }
 
 
-const DOMattack=(victim)=>{
+const DOMattack=(Player, victim)=>{
 
     const Name= victim.PlayerName
 
     if (Name=="AI"){   
-        const PlayerBoard= document.querySelector(".ComputerBoard")
-        const boxPlayer = PlayerBoard.querySelectorAll(".boxes")
-        boxPlayer.forEach((box)=>{
+        const ComputerBoard= document.querySelector(".ComputerBoard")
+        const boxAI = ComputerBoard.querySelectorAll(".boxes")
+        boxAI.forEach((box)=>{
             box.addEventListener('click', (e)=>{
                 victim.PlayerBoard.receiveAttack(e.target.dataset.position)
                 console.log(victim.PlayerBoard.box)
@@ -53,56 +53,28 @@ const DOMattack=(victim)=>{
                 }
                 
             })
-        })
-    }
+            const PlayerBoard= document.querySelector(".PlayerBoard")
+            let attackCoord = Math.floor(Math.random() * 100)
+            Player.PlayerBoard.receiveAttack(attackCoord)
+            console.log(victim.PlayerBoard.box)
 
-    else {
-        const PlayerBoard= document.querySelector(".PlayerBoard")
-        const boxPlayer = PlayerBoard.querySelectorAll(".boxes")
-        boxPlayer.forEach((box)=>{
-            box.addEventListener('click', (e)=>{
-                victim.PlayerBoard.receiveAttack(e.target.dataset.position)
-                console.log(victim.PlayerBoard.box)
-            if (victim.PlayerBoard.fleetDestroyed()){
+            if (Player.PlayerBoard.fleetDestroyed()){
                 console.log("COMPUTER WINS")
             }
-        
-            })
         })
     }
 
+ 
+
+ 
     
-    
-    
-}
-
-
-const GameLoop=(Player, Computer)=>{
-    let counter= 0
-
-
-        if (counter=0){
-            DOMattack(Computer)
-            counter=counter+1
-            console.log(counter)
-        }
-
-        else{
-            DOMattack(Player)
-            counter=counter-1
-            console.log(counter)
-        }
-
-
-
-    
-
-   
-
 }
 
 
 
 
 
-export {createGrid, placeDOMShips, DOMattack,GameLoop}
+
+
+
+export {createGrid, placeDOMShips, DOMattack}
