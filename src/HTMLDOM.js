@@ -45,22 +45,25 @@ const DOMattack=(Player, victim)=>{
         const boxAI = ComputerBoard.querySelectorAll(".boxes")
         boxAI.forEach((box)=>{
             box.addEventListener('click', (e)=>{
-                victim.PlayerBoard.receiveAttack(e.target.dataset.position)
+                Player.attackEnemy(victim.PlayerBoard, e.target.dataset.position)
                 console.log(victim.PlayerBoard.box)
     
                 if (victim.PlayerBoard.fleetDestroyed()){
                     console.log("PLAYER WINS")
                 }
-                
-            })
-            const PlayerBoard= document.querySelector(".PlayerBoard")
-            let attackCoord = Math.floor(Math.random() * 100)
-            Player.PlayerBoard.receiveAttack(attackCoord)
-            console.log(victim.PlayerBoard.box)
 
-            if (Player.PlayerBoard.fleetDestroyed()){
-                console.log("COMPUTER WINS")
-            }
+                else if (Player.PlayerBoard.fleetDestroyed()){
+                    console.log("COMPUTER WINS")
+                }
+                
+
+                const PlayerBoard= document.querySelector(".PlayerBoard")
+                victim.attackEnemy(Player.PlayerBoard)
+                console.log(Player.PlayerBoard.box)
+
+              
+            })
+            
         })
     }
 
