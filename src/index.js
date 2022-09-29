@@ -2,7 +2,7 @@ import './style.css';
 import { ship} from './ships'
 import {Gameboard} from './Gameboard'
 import {Player} from './Player'
-import {createGrid, placeDOMShips, DOMattack} from './HTMLDOM'
+import {createGrid, placeDOMShips, DOMattack,GameLoop} from './HTMLDOM'
 
 
 
@@ -37,13 +37,7 @@ Computer.PlayerBoard.placeShip()
 
 
 
-console.log(PlayerOne.PlayerBoard.box)
-console.log(Computer.PlayerBoard.box)
-console.log(Computer.PlayerBoard.shipArray)
-console.log(PlayerOne.PlayerBoard.shipArray)
-
-
 placeDOMShips(PlayerOne)
 placeDOMShips(Computer)
 
-DOMattack(Computer)
+GameLoop(PlayerOne,Computer)
