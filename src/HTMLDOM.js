@@ -35,6 +35,35 @@ const placeDOMShips=(Player)=>{
 
 }
 
+const updateBoard=(Player)=>{
+
+        const ComputerBoard= document.querySelector(".ComputerBoard")
+        const boxAI = ComputerBoard.querySelectorAll(".boxes")
+
+        const PlayerBoard= document.querySelector(".PlayerBoard")
+        const boxPlayer = PlayerBoard.querySelectorAll(".boxes")
+
+        for (let i=0;i<Player.PlayerBoard.box.length;i++){
+
+            const boxChosen= PlayerBoard.querySelector("[data-position="+"'"+String(i)+"'"+"]")
+            
+     
+
+
+                    if ((Player.PlayerBoard.box[i]=="missed"&& boxChosen.id!="missed")||(Player.PlayerBoard.box[i]=="hit"&& boxChosen.id!="missed")){
+                        boxChosen.id= Player.PlayerBoard.box[i]
+                    }
+               
+
+            
+        
+        } 
+            
+        
+
+    }
+
+
 
 const DOMattack=(Player, victim)=>{
 
@@ -46,14 +75,15 @@ const DOMattack=(Player, victim)=>{
 
         const PlayerBoard= document.querySelector(".PlayerBoard")
         const boxPlayer = PlayerBoard.querySelectorAll(".boxes")
-
+        const Winner= document.querySelector(".winner")
 
         boxAI.forEach((box)=>{
             box.addEventListener('click', (e)=>{
                
-                
+           
                 Player.attackEnemy(victim.PlayerBoard, e.target.dataset.position)
-                console.log(victim.PlayerBoard.box)
+                
+
 
                 if (victim.PlayerBoard.box[e.target.dataset.position]=="missed"){
                     box.setAttribute("id","missed")
@@ -66,17 +96,19 @@ const DOMattack=(Player, victim)=>{
                 }
 
                 if (victim.PlayerBoard.fleetDestroyed()){
-                    console.log("PLAYER WINS")
+                    Winner.innerHTML= "Player Wins"
                 }
 
                 else if (Player.PlayerBoard.fleetDestroyed()){
-                    console.log("COMPUTER WINS")
+                    Winner.innerHTML= "Computer Wins"
+
+                    
                 }
     
                
                 const PlayerBoard= document.querySelector(".PlayerBoard")
                 victim.attackEnemy(Player.PlayerBoard)
-                console.log(Player.PlayerBoard.box)
+                updateBoard(Player)
 
               
             })
@@ -97,4 +129,4 @@ const DOMattack=(Player, victim)=>{
 
 
 
-export {createGrid, placeDOMShips, DOMattack}
+export {createGrid, placeDOMShips, DOMattack,updateBoard}

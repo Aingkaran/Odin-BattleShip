@@ -108,7 +108,27 @@
     background-color: blue;
    }
 
-   #hit{
-    background-color: red;
+#hit{
+background-color: red;
+}
+
+
+.ComputerBoard #ship{
+    background-color: grey
    }
 
+
+.ComputerBoard #ship:hover{
+background-color: red
+}
+.controls{
+    display: flex;
+    flex-direction: column;
+}
+
+.winner{
+    margin-top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: green
+}
