@@ -1,1 +1,1 @@
-LIVE DEMO : [a link](https://aingkaran.github.io/Odin-BattleShip/)
+LIVE DEMO : [Odin-BattleShip](https://aingkaran.github.io/Odin-BattleShip/)
